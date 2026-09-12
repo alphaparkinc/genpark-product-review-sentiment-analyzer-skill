@@ -1,3 +1,7 @@
+import sys
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 from client import ProductReviewSentimentAnalyzerClient
 
 def main():
@@ -9,7 +13,7 @@ def main():
     print(f"Verified Purchases: {res['verified_purchase_percentage']}")
     print("\nAspect Satisfaction Radar (0-10):")
     for aspect, score in res['aspect_breakdown'].items():
-        print(f"  • {aspect:<18}: {score}/10.0")
+        print(f"  - {aspect:<18}: {score}/10.0")
 
 if __name__ == '__main__':
     main()
