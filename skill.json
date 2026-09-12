@@ -1,0 +1,41 @@
+{
+  "name": "genpark-product-review-sentiment-analyzer-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - In-depth customer review aspect-level sentiment mining engine extracting build quality, battery, performance, and satisfaction telemetry.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "review-mining",
+  "tags": [
+    "sentiment-analysis",
+    "review-mining",
+    "aspect-sentiment",
+    "customer-feedback",
+    "ecommerce-agent"
+  ],
+  "inputs": {
+    "product_name": {
+      "type": "string",
+      "default": "Roborock S8 MaxV Ultra"
+    },
+    "reviews": {
+      "type": "array",
+      "description": "List of review objects with rating, verified, text"
+    }
+  },
+  "outputs": {
+    "verdict": {
+      "type": "string"
+    },
+    "average_star_rating": {
+      "type": "number"
+    },
+    "net_promoter_index": {
+      "type": "number"
+    },
+    "aspect_breakdown": {
+      "type": "object"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
